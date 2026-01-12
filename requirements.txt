@@ -1,0 +1,6 @@
+```text
+    pandas
+    sqlalchemy
+    psycopg2-binary
+    numpy
+    ``` 
