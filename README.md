@@ -7,7 +7,7 @@ The Mumbai Housing Valuation Engine (MHVE) is a professional-grade Data Engineer
 
 
 🏗️ System Architecture
-The project follows a modular ETL (Extract, Transform, Load pattern:
+The project follows a modular ETL (Extract, Transform, Load) pattern:
 
 1. Extraction: Python scripts ingest raw property data (Price, Locality, Sq Ft) from market datasets.
 2. Transformation: Data cleaning using `Pandas` to handle nulls and normalize price metrics (Cr to INR).
@@ -40,6 +40,7 @@ To identify "Gains," I utilize Window Functions to rank properties within their 
 
 - sql
 Calculating price deviation from suburb average to find outliers
+```
 SELECT 
     locality, 
     price_cr,
@@ -48,12 +49,12 @@ SELECT
 FROM mumbai_properties
 WHERE bhk = 2
 ORDER BY deviation ASC;
-
+```
 ---
 
 ⚙️ Installation & Setup
 
-Clone the repo: git clone https://github.com/yourusername/mumbai-housing-valuation-engine.git
+Clone the repo: git clone https://github.com/hirenmanani/housing-valuation-engine.git
 
 Install dependencies: pip install -r requirements.txt
 
