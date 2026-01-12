@@ -3,10 +3,10 @@ Mumbai Housing Valuation Engine (MHVE) 🏠📊
 🚀 Strategic Overview
 The Mumbai Housing Valuation Engine (MHVE) is a professional-grade Data Engineering pipeline designed to identify undervalued 2BHK properties. In a market as opaque as Mumbai's, this engine democratizes data by calculating "Fair Value" metrics, helping families make data-backed investment decisions.
 
-> Business Value:** Automatically flags properties priced 15%+ below suburb averages, significantly reducing manual research time.
+> Business Value: Automatically flags properties priced 15%+ below suburb averages, significantly reducing manual research time.
 
 
-## 🏗️ System Architecture
+🏗️ System Architecture
 The project follows a modular ETL (Extract, Transform, Load pattern:
 
 1. Extraction: Python scripts ingest raw property data (Price, Locality, Sq Ft) from market datasets.
@@ -24,7 +24,7 @@ The project follows a modular ETL (Extract, Transform, Load pattern:
 
 ---
 
-## 📊 Data Dictionary
+📊 Data Dictionary
 | Field | Type | Description |
 | :--- | :--- | :--- |
 | `property_id` | UUID | Unique identifier for each listing. |
