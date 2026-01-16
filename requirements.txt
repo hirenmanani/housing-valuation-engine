@@ -1,9 +1,4 @@
-```text
-    pandas
-    sqlalchemy
-    psycopg2-binary
-    streamlit
-    pandas
-    plotly
-    numpy
-    ``` 
+streamlit
+pandas
+plotly
+numpy
