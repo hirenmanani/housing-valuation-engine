@@ -67,9 +67,9 @@ Run Pipeline: python main.py
 
 📅 Roadmap to Production
 
-[x] Phase 1: Core ETL Logic & SQL Schema (Current)
+[x] Phase 1: Core ETL Logic & SQL Schema (Completed)
 
-[ ] Phase 2: Containerization with Docker for environment parity.
+[x] Phase 2: Containerization with Docker for environment parity (Current)
 
 [ ] Phase 3: Automated Data Validation (Great Expectations).
 
