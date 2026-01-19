@@ -5,7 +5,6 @@ logger = get_logger("ValueAnalyzer")
 
 logger.info("Starting Value Analysis...")
 
-
 conn = sqlite3.connect('mumbai_housing.db')
 
 # This query calculates the median price for each locality
