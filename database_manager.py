@@ -16,6 +16,5 @@ def load_to_db():
     print("✅ Data successfully loaded into SQL Database!")
     conn.close()
 
-
 if __name__ == "__main__":
     load_to_db()
