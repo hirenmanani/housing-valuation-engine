@@ -15,7 +15,6 @@ st.set_page_config(page_title="Mumbai Housing Engine", layout="wide")
 
 # 2. Connection & Transformation Logic
 
-
 @st.cache_data  # Senior Move: Cache data to improve dashboard speed
 def get_processed_data():
     if os.path.exists(DB_PATH):
