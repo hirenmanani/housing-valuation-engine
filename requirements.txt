@@ -6,3 +6,4 @@ joblib
 sqlalchemy
 psycopg2-binary
 pydantic
+pyspark
