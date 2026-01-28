@@ -1,23 +1,25 @@
-# Step 1: Foundation
 FROM python:3.11-slim
 
-# Step 2: Set the workspace
-WORKDIR /app
-
-# Step 3: Minimal System Tools
+# Install Java, Curl, and Build Tools
 RUN apt-get update && apt-get install -y \
+    default-jre \
+    curl \
     build-essential \
     && rm -rf /var/lib/apt/lists/*
 
-# Step 4: Ingredients (Install libraries)
+WORKDIR /app
+
+# Create the folder and download the JAR explicitly
+RUN mkdir -p /app/jars && \
+    curl -L https://jdbc.postgresql.org/download/postgresql-42.7.1.jar -o /app/jars/postgresql-42.7.1.jar
+
+# Install Python requirements
 COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Step 5: The Project Files
+# Copy the rest of the app
 COPY . .
 
-# Step 6: Networking
 EXPOSE 8501
 
-# Step 7: Launch Engine
 CMD ["streamlit", "run", "app.py", "--server.port=8501", "--server.address=0.0.0.0"]
