@@ -2,21 +2,36 @@ services:
   db:
     image: postgres:15
     container_name: mumbai_db
+    restart: always
     environment:
       POSTGRES_USER: admin
       POSTGRES_PASSWORD: mumbai_password
       POSTGRES_DB: mumbai_housing
     ports:
       - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
 
   spark-master:
-    image: bitnami/spark:3.5
-    environment:
-      - SPARK_MODE=master
+    image: apache/spark:3.5.0
+    container_name: spark_master
+    user: root
     ports:
       - "8080:8080"
       - "7077:7077"
+    # Simplified official entrypoint
+    command: /opt/spark/bin/spark-class org.apache.spark.deploy.master.Master
 
+  spark-worker:
+    image: apache/spark:3.5.0
+    container_name: spark_worker
+    user: root
+    depends_on:
+      - spark-master
+    environment:
+      - SPARK_MASTER=spark://spark-master:7077
+    # Simplified official entrypoint
+    command: /opt/spark/bin/spark-class org.apache.spark.deploy.worker.Worker spark://spark-master:7077
   mumbai_app:
     build: .
     container_name: mumbai_app
@@ -25,5 +40,12 @@ services:
     depends_on:
       - db
       - spark-master
+    volumes:
+      - .:/app
+      - /app/jars # <--- ADD THIS: This is an "Anonymous Volume" that protects the JARs
+      - /app/venv # Prevents local venv from messing with the container
     environment:
       - DATABASE_URL=postgresql://admin:mumbai_password@db:5432/mumbai_housing
+
+volumes:
+  postgres_data:
