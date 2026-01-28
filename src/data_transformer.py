@@ -1,7 +1,7 @@
 import pandas as pd
 
 # 1. Load the data you generated earlier
-df = pd.read_csv('mumbai_raw_data.csv', on_bad_lines='skip')
+df = pd.read_csv('data/mumbai_raw_data.csv', on_bad_lines='skip')
 
 # 2. Add the 'Price per SqFt' column (Crucial for Data Engineering)
 # Formula: (Price in Cr * 10,000,000) / SqFt
