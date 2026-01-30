@@ -69,9 +69,9 @@ Clone the repo:
 
 git clone [https://github.com/hirenmanani/housing-valuation-engine.git](https://github.com/hirenmanani/housing-valuation-engine.git)
 cd housing-valuation-engine
+Create a .env file with your DB credentials
 
-Launch the Stack:
-    
+Launch the Stack:    
 docker-compose up --build
 
 Access the Dashboard: Navigate to http://localhost:8501 in your browser.
