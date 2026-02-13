@@ -1,6 +1,6 @@
 Mumbai Housing Valuation Engine (MHVE) 🦁
 
-A production-grade Data Engineering and Machine Learning pipeline designed for real estate arbitrage analysis using distributed computing and containerized microservices.
+A Production-style, end-to-end Data Engineering pipeline built while learning Spark, SQL, and Docker, designed for real estate arbitrage analysis using distributed computing and containerized microservices.
 
 🚀 Live Demo: [View Dashboard](https://housing-valuation-engine-zdm6p4rhehytc6cxjgmgsf.streamlit.app/)
 
@@ -89,6 +89,15 @@ Access the Dashboard: Navigate to http://localhost:8501 in your browser.
 [x] Phase 4: Price Prediction Engine (Linear Regression).
 
 [ ] Phase 5: Automated Data Validation (Great Expectations).
+
+---
+
+What I Learned Building This
+- Why distributed processing (Spark) matters and when it does NOT
+- How schema design impacts downstream analytics
+- Tradeoffs between SQLite and Postgres
+- How Docker simplifies environment reproducibility
+- How SQL window functions enable advanced analytics without aggregation loss
 
 ---
 
