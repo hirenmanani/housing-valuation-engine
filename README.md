@@ -105,3 +105,8 @@ What I Learned Building This
 
 Hiren Manani | M.S. in Computer Science, Syracuse University (Expected May 2026) 
 Specialization: Data Engineering & Distributed Systems
+
+![Python](https://img.shields.io/badge/python-3.11-blue)
+![Docker](https://img.shields.io/badge/docker-ready-brightgreen)
+![License](https://img.shields.io/badge/license-MIT-green)
+
